@@ -4,6 +4,10 @@ To build icasei/logspout GELF version:
 
 > docker build -t docker.icasei.com.br/logspout:gelf .
 
+# bring graylog up with compose file
+
+> docker-compose up graylog
+
 # logspout
 
 [![CircleCI](https://img.shields.io/circleci/project/gliderlabs/logspout/release.svg)](https://circleci.com/gh/gliderlabs/logspout)
