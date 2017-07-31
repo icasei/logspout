@@ -1,0 +1,10 @@
+version: '2'
+services:
+  logspout:
+    image: micahhausler/logspout:gelf
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8000:80
+    command: gelf://10.0.3.38:12201
