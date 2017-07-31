@@ -1,5 +1,7 @@
-version: '2'
+version: "3"
+
 services:
+
   logspout:
     image: micahhausler/logspout:gelf
     volumes:
@@ -8,3 +10,5 @@ services:
     ports:
       - 8000:80
     command: gelf://10.0.3.38:12201
+    deploy:
+      mode: global
