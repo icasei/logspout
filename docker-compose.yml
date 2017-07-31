@@ -1,5 +1,16 @@
 version: '2'
 services:
+  logspout:
+    image: micahhausler/logspout:gelf
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8000:80
+    command: gelf://graylog:12201
+    depends_on:
+      - graylog
+    networks:
+      - graylognet
   mongo:
     image: "mongo:3"
     volumes:

@@ -1,0 +1,16 @@
+docker run \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -p 8000:80 \
+    docker.icasei.com.br/logspout:gelf \
+    gelf://127.0.0.1:12201
+
+docker run \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -p 8000:80 \
+    micahhausler/logspout:gelf \
+    gelf://127.0.0.1:12201
+
+docker run --name="logspout" \
+	--volume=/var/run/docker.sock:/var/run/docker.sock \
+	gliderlabs/logspout:v2 \
+	udp://127.0.0.1:12201
