@@ -41,10 +41,10 @@ services:
     networks:
       - graylognet
   graylog:
-    image: graylog2/server:2.3.0-1
+    image: graylog/graylog:2.3.0-1
     volumes:
       - graylog_data_journal:/usr/share/graylog/data/journal
-      - graylog_config:/usr/share/graylog/data/config
+#      - graylog_config:/usr/share/graylog/data/config
     environment:
       GRAYLOG_PASSWORD_SECRET: somepasswordpepper
       GRAYLOG_ROOT_PASSWORD_SHA2: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
@@ -73,8 +73,8 @@ volumes:
     driver: local
   graylog_data_journal:
     driver: local
-  graylog_config:
-    driver: local
+#  graylog_config:
+#    driver: local
 
 networks:
   graylognet:

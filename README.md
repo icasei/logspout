@@ -6,7 +6,15 @@ To build icasei/logspout GELF version:
 
 # bring graylog up with compose file
 
-> docker-compose up graylog
+> docker-compose up
+
+# send log to GELF UDP
+
+> Add GELF UDP on System / Inputs
+
+test with
+
+> $ echo -e '{"version": "1.1","host":"example.org","short_message":"Short message","full_message":"Backtrace here\n\nmore stuff","level":1,"_user_id":9001,"_some_info":"foo","_some_env_var":"bar"}\0' | nc -w 1 -u 127.0.0.1 12201
 
 # logspout
 
